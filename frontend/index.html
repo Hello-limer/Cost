@@ -70,7 +70,7 @@
             <section id="tab-products" class="tab-content active">
                 <div class="section-header">
                     <h2>商品管理</h2>
-                    <button class="btn btn-primary" onclick="openProductModal()">
+                    <button class="btn btn-primary" onclick="window.productModule.openProductModal()">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -84,7 +84,7 @@
             <section id="tab-materials" class="tab-content">
                 <div class="section-header">
                     <h2>原料管理</h2>
-                    <button class="btn btn-primary" onclick="openMaterialModal()">
+                    <button class="btn btn-primary" onclick="window.materialModule.openMaterialModal()">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -113,7 +113,7 @@
                             <label for="calc-quantity">数量</label>
                             <input type="number" id="calc-quantity" class="form-control" value="1" min="1">
                         </div>
-                        <button class="btn btn-primary" style="width: 100%;" onclick="calculateCost()">计算单个商品</button>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="window.calcModule.calculateCost()">计算单个商品</button>
                     </div>
                     <!-- 中间：批量计算 -->
                     <div class="card">
@@ -123,8 +123,8 @@
                             <div id="batch-products" class="batch-product-list"></div>
                         </div>
                         <div class="btn-group" style="width: 100%;">
-                            <button class="btn btn-secondary" style="flex: 1;" onclick="clearBatchSelection()">清空选择</button>
-                            <button class="btn btn-primary" style="flex: 1;" onclick="calculateBatchCost()">批量计算</button>
+                            <button class="btn btn-secondary" style="flex: 1;" onclick="window.calcModule.clearBatchSelection()">清空选择</button>
+                            <button class="btn btn-primary" style="flex: 1;" onclick="window.calcModule.calculateBatchCost()">批量计算</button>
                         </div>
                     </div>
                     <!-- 右侧：计算结果 -->
@@ -149,7 +149,7 @@
             <section id="tab-rules" class="tab-content">
                 <div class="section-header">
                     <h2>规则管理</h2>
-                    <button class="btn btn-primary" onclick="openRuleModal()">
+                    <button class="btn btn-primary" onclick="window.ruleModule.openRuleModal()">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -166,7 +166,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="product-modal-title">添加商品</h3>
-                <button class="modal-close" onclick="closeProductModal()">
+                <button class="modal-close" onclick="window.productModule.closeProductModal()">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
@@ -196,7 +196,7 @@
                     <div class="form-group">
                         <label>配方（原料及用量）</label>
                         <div id="recipe-list" class="recipe-list"></div>
-                        <button type="button" class="btn btn-secondary btn-sm" onclick="addRecipeRow()">
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="window.productModule.addRecipeRow()">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
@@ -206,8 +206,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeProductModal()">取消</button>
-                <button class="btn btn-primary" onclick="saveProduct()">保存</button>
+                <button class="btn btn-secondary" onclick="window.productModule.closeProductModal()">取消</button>
+                <button class="btn btn-primary" onclick="window.productModule.saveProduct()">保存</button>
             </div>
         </div>
     </div>
@@ -217,7 +217,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="material-modal-title">添加原料</h3>
-                <button class="modal-close" onclick="closeMaterialModal()">
+                <button class="modal-close" onclick="window.materialModule.closeMaterialModal()">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
@@ -247,8 +247,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeMaterialModal()">取消</button>
-                <button class="btn btn-primary" onclick="saveMaterial()">保存</button>
+                <button class="btn btn-secondary" onclick="window.materialModule.closeMaterialModal()">取消</button>
+                <button class="btn btn-primary" onclick="window.materialModule.saveMaterial()">保存</button>
             </div>
         </div>
     </div>
@@ -258,7 +258,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="rule-modal-title">添加规则</h3>
-                <button class="modal-close" onclick="closeRuleModal()">
+                <button class="modal-close" onclick="window.ruleModule.closeRuleModal()">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
@@ -273,7 +273,7 @@
                     </div>
                     <div class="form-group">
                         <label for="rule-type">规则类型 *</label>
-                        <select id="rule-type" class="form-control" required onchange="updateRuleForm()">
+                        <select id="rule-type" class="form-control" required onchange="window.ruleModule.updateRuleForm()">
                             <option value="quantity_discount">数量折扣</option>
                             <option value="total_cost_discount">总成本折扣</option>
                         </select>
@@ -282,6 +282,26 @@
                         <div class="form-group" id="condition-quantity">
                             <label for="rule-min-quantity">最低数量 *</label>
                             <input type="number" id="rule-min-quantity" class="form-control" min="1">
+                        </div>
+                        <div class="form-group" id="discount-mode-select" style="display: none;">
+                            <label for="rule-discount-mode">优惠方式 *</label>
+                            <select id="rule-discount-mode" class="form-control">
+                                <option value="all">全部数量优惠</option>
+                                <option value="excess">仅超过部分优惠</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="unit-cost-condition-type" style="display: none;">
+            <label for="rule-unit-cost-condition-type">单位成本条件类型（可选）</label>
+            <select id="rule-unit-cost-condition-type" class="form-control">
+                <option value="none">无限制</option>
+                <option value="max">最高单位成本（仅≤此价格的商品优惠）</option>
+                <option value="min">最低单位成本（仅≥此价格的商品优惠）</option>
+                <option value="equal">等于该价格（仅=此价格的商品优惠）</option>
+            </select>
+        </div>
+                        <div class="form-group" id="unit-cost-value" style="display: none;">
+                            <label for="rule-unit-cost-value">单位成本值</label>
+                            <input type="number" id="rule-unit-cost-value" class="form-control" step="0.01" min="0" placeholder="请输入价格">
                         </div>
                         <div class="form-group" id="condition-cost" style="display: none;">
                             <label for="rule-min-cost">最低成本 *</label>
@@ -297,6 +317,11 @@
                             <label for="rule-discount-percent">折扣比例 *</label>
                             <input type="number" id="rule-discount-percent" class="form-control" step="0.01" min="0" max="1" placeholder="0.05 表示 5%">
                         </div>
+                    </div>
+                    <!-- 规则说明 -->
+                    <div class="form-group" style="margin-top: 16px; padding: 12px; background: var(--background); border-radius: var(--radius);">
+                        <label style="font-weight: 600; margin-bottom: 8px; display: block;">规则说明预览</label>
+                        <p id="rule-preview" style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">请选择规则类型并填写参数</p>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
@@ -318,8 +343,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeRuleModal()">取消</button>
-                <button class="btn btn-primary" onclick="saveRule()">保存</button>
+                <button class="btn btn-secondary" onclick="window.ruleModule.closeRuleModal()">取消</button>
+                <button class="btn btn-primary" onclick="window.ruleModule.saveRule()">保存</button>
             </div>
         </div>
     </div>
@@ -327,7 +352,6 @@
     <!-- 提示消息 -->
     <div id="toast" class="toast"></div>
 
-    <script src="js/api.js"></script>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

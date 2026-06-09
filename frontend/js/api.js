@@ -1,5 +1,5 @@
 // API 基础配置
-const API_BASE = '/api';
+export const API_BASE = '/api';
 
 // 通用请求函数
 async function request(url, options = {}) {
@@ -27,7 +27,7 @@ async function request(url, options = {}) {
 }
 
 // 原料 API
-const MaterialsAPI = {
+export const MaterialsAPI = {
     getAll: () => request('/materials/'),
     get: (id) => request(`/materials/${id}`),
     create: (data) => request('/materials/', {
@@ -44,7 +44,7 @@ const MaterialsAPI = {
 };
 
 // 商品 API
-const ProductsAPI = {
+export const ProductsAPI = {
     getAll: () => request('/products/'),
     get: (id) => request(`/products/${id}`),
     create: (data) => request('/products/', {
@@ -61,7 +61,7 @@ const ProductsAPI = {
 };
 
 // 规则 API
-const RulesAPI = {
+export const RulesAPI = {
     getAll: (activeOnly = true) => request(`/rules/?active_only=${activeOnly}`),
     get: (id) => request(`/rules/${id}`),
     create: (data) => request('/rules/', {
@@ -78,7 +78,7 @@ const RulesAPI = {
 };
 
 // 成本计算 API
-const CalculatorAPI = {
+export const CalculatorAPI = {
     calculate: (data) => request('/calculate/', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -90,13 +90,13 @@ const CalculatorAPI = {
 };
 
 // 历史记录 API
-const HistoryAPI = {
+export const HistoryAPI = {
     getAll: () => request('/history/'),
     get: (id) => request(`/history/${id}`),
 };
 
 // 系统 API
-const SystemAPI = {
+export const SystemAPI = {
     initDefaultRules: () => request('/init-default-rules/', {
         method: 'POST',
     }),
