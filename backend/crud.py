@@ -196,5 +196,16 @@ def get_calculation_history(db: Session, skip: int = 0, limit: int = 100) -> Lis
     return db.query(models.CalculationHistory).order_by(desc(models.CalculationHistory.created_at)).offset(skip).limit(limit).all()
 
 
+def get_calculation_history_count(db: Session) -> int:
+    return db.query(models.CalculationHistory).count()
+
+
 def get_calculation_history_by_id(db: Session, history_id: int) -> Optional[models.CalculationHistory]:
     return db.query(models.CalculationHistory).filter(models.CalculationHistory.id == history_id).first()
+
+
+def delete_all_calculation_history(db: Session) -> int:
+    count = db.query(models.CalculationHistory).count()
+    db.query(models.CalculationHistory).delete()
+    db.commit()
+    return count

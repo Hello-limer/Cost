@@ -93,6 +93,8 @@ export const CalculatorAPI = {
 export const HistoryAPI = {
     getAll: () => request('/history/'),
     get: (id) => request(`/history/${id}`),
+    getPaginated: (page = 1, pageSize = 10) => request(`/history/paginated/?page=${page}&page_size=${pageSize}`),
+    clearAll: () => request('/history/', { method: 'DELETE' }),
 };
 
 // 系统 API
