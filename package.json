@@ -1,0 +1,30 @@
+{
+  "name": "cost",
+  "version": "1.0.0",
+  "description": "一个功能完整的商品成本计算工具，使用 FastAPI + 原生 HTML/CSS/JS + MySQL 开发。",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx --yes http-server frontend -p 8080 -c-1",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open android",
+    "cap:copy": "npx cap copy android",
+    "cap:build": "cd android && gradlew.bat assembleDebug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hello-limer/Cost.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hello-limer/Cost/issues"
+  },
+  "homepage": "https://github.com/Hello-limer/Cost#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/core": "^8.4.0"
+  }
+}
